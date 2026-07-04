@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Colombian Empire | DiplomaticaMC Dominion</title>
+    <title>The Colombian Empire | DiplomaticaMC</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-main: #06080c;
-            --bg-surface: #0c0f16;
-            --bg-card: #131924;
-            --text-primary: #f0f4f8;
-            --text-muted: #8492a6;
+            --bg-main: #05070a;
+            --bg-surface: #0b0e14;
+            --bg-card: #111622;
+            --text-primary: #f1f5f9;
+            --text-muted: #8898aa;
             --imperial-gold: #ffc837;
             --colombia-blue: #1d4ed8;
             --colombia-red: #dc2626;
@@ -27,74 +27,80 @@
         .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
         .section { padding: 6rem 0; }
         .bg-alt { background-color: var(--bg-surface); }
-        .grid { display: grid; gap: 2rem; }
+        .grid { display: grid; gap: 2.5rem; }
         .grid-2 { grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); }
         .grid-3 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+        
         .center-header { text-align: center; margin-bottom: 4rem; }
         .sub-title { color: var(--imperial-gold); text-transform: uppercase; letter-spacing: 4px; font-size: 0.85rem; font-weight: 700; display: block; margin-bottom: 0.5rem; }
-        .section-title { font-family: var(--font-heading); font-size: 2.8rem; font-weight: 900; margin-bottom: 1rem; }
-        .section-desc { color: var(--text-muted); max-width: 650px; margin: 0 auto; font-size: 1.1rem; }
+        .section-title { font-family: var(--font-heading); font-size: 3rem; font-weight: 900; margin-bottom: 1rem; letter-spacing: 1px; }
+        .section-desc { color: var(--text-muted); max-width: 700px; margin: 0 auto; font-size: 1.1rem; }
 
         /* Navigation */
         .navbar { display: flex; justify-content: space-between; align-items: center; padding: 2rem 4rem; position: absolute; width: 100%; z-index: 10; }
-        .nav-logo { font-family: var(--font-heading); font-weight: 900; font-size: 1.3rem; letter-spacing: 2px; color: var(--imperial-gold); }
+        .nav-brand { display: flex; align-items: center; gap: 1rem; }
+        .nav-logo-img { height: 40px; width: auto; object-fit: contain; }
+        .nav-logo { font-family: var(--font-heading); font-weight: 900; font-size: 1.4rem; letter-spacing: 2px; color: var(--imperial-gold); }
         .nav-links { display: flex; list-style: none; gap: 2.5rem; }
         .nav-links a { color: var(--text-primary); text-decoration: none; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; transition: color 0.2s; }
         .nav-links a:hover { color: var(--imperial-gold); }
 
         /* Hero */
-        .hero { height: 90vh; display: flex; align-items: center; justify-content: center; position: relative; text-align: center; background: radial-gradient(circle at center, #0f1626 0%, #030508 100%); }
-        .hero-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to bottom, transparent 60%, var(--bg-main)); }
-        .hero-content { position: relative; z-index: 2; max-width: 900px; padding: 0 2rem; }
+        .hero { height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; text-align: center; background: radial-gradient(circle at center, #0f172a 0%, #030508 100%); }
+        .hero-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to bottom, transparent 50%, var(--bg-main)); }
+        .hero-content { position: relative; z-index: 2; max-width: 950px; padding: 0 2rem; display: flex; flex-direction: column; align-items: center; }
+        .hero-flag { height: 120px; width: auto; margin-bottom: 2rem; box-shadow: 0 10px 25px rgba(0,0,0,0.5); border-radius: 2px; }
         .hero-tag { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 6px; color: var(--imperial-gold); display: block; margin-bottom: 1.5rem; font-weight: 700; }
-        .hero h1 { font-family: var(--font-heading); font-size: 4.5rem; font-weight: 900; line-height: 1.1; margin-bottom: 1.5rem; letter-spacing: 2px; }
-        .hero p { font-size: 1.35rem; color: var(--text-muted); margin-bottom: 3rem; }
+        .hero h1 { font-family: var(--font-heading); font-size: 5rem; font-weight: 900; line-height: 1.1; margin-bottom: 1.5rem; letter-spacing: 2px; }
+        .hero p { font-size: 1.4rem; color: var(--text-muted); margin-bottom: 3.5rem; max-width: 800px; }
 
         /* Buttons */
-        .btn { display: inline-block; padding: 1rem 2.5rem; font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; text-decoration: none; border-radius: 2px; transition: transform 0.2s, background-color 0.2s; }
+        .btn { display: inline-block; padding: 1.2rem 3rem; font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 2px; text-decoration: none; border-radius: 2px; transition: all 0.2s ease; }
         .btn:hover { transform: translateY(-2px); }
-        .btn-primary { background-color: var(--imperial-gold); color: #000; }
-        .btn-primary:hover { background-color: #ffd254; }
-        .btn-secondary { border: 1px solid rgba(255,255,255,0.2); color: var(--text-primary); margin-left: 1.5rem; }
-        .btn-secondary:hover { background: rgba(255,255,255,0.05); }
+        .btn-primary { background-color: var(--imperial-gold); color: #000; box-shadow: 0 4px 15px rgba(255, 200, 55, 0.2); }
+        .btn-primary:hover { background-color: #ffd254; box-shadow: 0 6px 20px rgba(255, 200, 55, 0.4); }
+        .btn-secondary { border: 1px solid rgba(255,255,255,0.15); color: var(--text-primary); margin-left: 1.5rem; }
+        .btn-secondary:hover { background: rgba(255,255,255,0.05); border-color: #fff; }
 
-        /* Gallery Grid */
-        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 2.5rem; margin-top: 3rem; }
-        .gallery-item { background-color: var(--bg-card); border: 1px solid rgba(255, 204, 0, 0.05); border-radius: 4px; overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease; }
-        .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); border-color: var(--imperial-gold); }
-        .gallery-img-box { position: relative; height: 240px; overflow: hidden; background-color: #12161f; }
-        .gallery-img-box img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
-        .block-palette-overlay { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.9) 70%, transparent); padding: 1.5rem 1rem 0.75rem; transform: translateY(100%); transition: transform 0.3s ease; }
-        .gallery-item:hover .block-palette-overlay { transform: translateY(0); }
-        .block-palette-overlay span { font-size: 0.8rem; color: var(--imperial-gold); text-transform: uppercase; letter-spacing: 1px; font-weight: 700; }
-        .gallery-info { padding: 1.75rem; }
-        .gallery-info h4 { font-family: var(--font-heading); font-size: 1.3rem; margin-bottom: 0.75rem; color: #fff; }
-        .gallery-info p { color: var(--text-muted); font-size: 0.95rem; }
+        /* Map Section Graphics */
+        .map-wrapper { max-width: 900px; margin: 3rem auto 0; border: 1px solid rgba(255,255,255,0.05); padding: 1rem; background-color: var(--bg-surface); border-radius: 4px; box-shadow: 0 20px 40px rgba(0,0,0,0.6); }
+        .map-img { width: 100%; height: auto; display: block; border-radius: 2px; }
 
-        /* Throne Section */
-        .throne-showcase { display: flex; justify-content: center; margin-bottom: 4rem; }
-        .emperor-box { background: linear-gradient(180deg, var(--bg-card) 0%, transparent 100%); border: 1px solid rgba(255, 200, 55, 0.2); padding: 3rem 5rem; text-align: center; border-radius: 4px; max-width: 500px; width: 100%; }
-        .crown-badge { background-color: var(--imperial-gold); color: #000; font-weight: 800; font-size: 0.75rem; padding: 0.3rem 1rem; letter-spacing: 2px; border-radius: 20px; }
-        .emperor-box h2 { font-family: var(--font-heading); font-size: 2.5rem; margin: 1rem 0 0.5rem; }
-        .emperor-box p { color: var(--text-muted); font-size: 0.95rem; }
-        
+        /* Feature Card (Pijao Layout) */
+        .pijao-showcase { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 4rem; align-items: start; margin-top: 2rem; }
+        .pijao-gallery { display: flex; flex-direction: column; gap: 1.5rem; }
+        .pijao-img-box { border-radius: 4px; overflow: hidden; border: 1px solid rgba(255, 200, 55, 0.15); box-shadow: 0 10px 25px rgba(0,0,0,0.4); background-color: var(--bg-card); }
+        .pijao-img-box img { width: 100%; height: auto; display: block; }
+        .pijao-img-caption { padding: 0.75rem 1.2rem; font-size: 0.85rem; color: var(--text-muted); background-color: var(--bg-card); border-top: 1px solid rgba(255,255,255,0.02); font-weight: 600; }
+        .pijao-card { background-color: var(--bg-card); border: 1px solid rgba(255,255,255,0.03); padding: 2.5rem; border-radius: 4px; border-left: 4px solid var(--imperial-gold); margin-bottom: 1.5rem; }
+        .pijao-card h3 { font-family: var(--font-heading); font-size: 1.6rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem; }
+        .pijao-card p { color: var(--text-muted); font-size: 1rem; }
+
+        /* Law Banner */
+        .law-banner { background: linear-gradient(90deg, #5c0606 0%, #1e0303 100%); border: 1px solid var(--colombia-red); border-radius: 4px; padding: 3.5rem; margin-top: 4rem; text-align: center; }
+        .law-banner h3 { font-family: var(--font-heading); font-size: 2rem; color: #fff; margin-bottom: 0.75rem; letter-spacing: 1px; }
+        .law-banner p { color: #fca5a5; max-width: 750px; margin: 0 auto; font-size: 1.1rem; font-weight: 600; }
+
+        /* Grant Box */
+        .grant-section { text-align: center; background-color: var(--bg-card); border: 1px solid rgba(255, 200, 55, 0.1); padding: 4rem; border-radius: 4px; position: relative; overflow: hidden; }
+        .grant-bg-icon { position: absolute; right: -30px; bottom: -30px; font-size: 12rem; opacity: 0.02; pointer-events: none; }
+        .gold-amount { font-family: var(--font-heading); font-size: 4rem; color: var(--imperial-gold); font-weight: 900; margin: 1.5rem 0; display: block; text-shadow: 0 0 20px rgba(255,200,55,0.2); }
+
         /* Gov Pills */
-        .gov-pill { background-color: var(--bg-surface); padding: 2rem; border-left: 3px solid var(--colombia-red); border-radius: 2px; }
-        .gov-pill h4 { font-family: var(--font-heading); font-size: 1.2rem; margin-bottom: 0.5rem; }
-        .gov-pill p { color: var(--text-muted); font-size: 0.9rem; }
+        .gov-pill { background-color: var(--bg-card); padding: 2.5rem; border-top: 3px solid var(--imperial-gold); border-radius: 4px; transition: transform 0.2s; }
+        .gov-pill:hover { transform: translateY(-3px); }
+        .gov-pill h4 { font-family: var(--font-heading); font-size: 1.25rem; margin-bottom: 0.75rem; color: #fff; }
+        .gov-pill p { color: var(--text-muted); font-size: 0.95rem; }
 
-        /* CTA Block */
-        .cta-box { background: linear-gradient(rgba(6, 8, 12, 0.9), rgba(6, 8, 12, 0.9)), url('https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?auto=format&fit=crop&w=1200&q=80') center/cover; padding: 6rem 3rem; border-radius: 4px; border: 1px solid rgba(255, 204, 0, 0.1); }
-        .cta-box h2 { font-family: var(--font-heading); font-size: 2.8rem; margin-bottom: 1rem; }
-        .cta-box p { color: var(--text-muted); max-width: 650px; margin: 0 auto 2.5rem; font-size: 1.1rem; }
+        /* Footer */
+        .footer { text-align: center; padding: 5rem; background-color: var(--bg-main); border-top: 1px solid rgba(255,255,255,0.02); color: var(--text-muted); font-size: 0.9rem; }
 
-        .footer { text-align: center; padding: 4rem; background-color: var(--bg-main); border-top: 1px solid rgba(255,255,255,0.02); color: var(--text-muted); font-size: 0.85rem; }
-
-        @media (max-width: 768px) {
+        @media (max-width: 900px) {
             .navbar { padding: 1.5rem; }
             .nav-links { display: none; }
-            .hero h1 { font-size: 2.8rem; }
-            .grid-2, .grid-3, .gallery-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 3.2rem; }
+            .pijao-showcase { grid-template-columns: 1fr; gap: 2.5rem; }
+            .grid-2, .grid-3 { grid-template-columns: 1fr; }
             .btn-secondary { margin-left: 0; margin-top: 1rem; display: block; }
         }
     </style>
@@ -102,123 +108,133 @@
 <body>
 
     <nav class="navbar">
-        <div class="nav-logo">COLOMBIAN EMPIRE</div>
+        <div class="nav-brand">
+            <!-- EMBEDDED FLAG CREST -->
+            <img src="Untitled design (3).png" class="nav-logo-img" alt="Imperial Flag Emblem" />
+            <div class="nav-logo">COLOMBIAN EMPIRE</div>
+        </div>
         <ul class="nav-links">
-            <li><a href="#builds">In-Game Showcase</a></li>
-            <li><a href="#ministries">Government</a></li>
-            <li><a href="#join">Enlist</a></li>
+            <li><a href="#domain">Territory</a></li>
+            <li><a href="#pijao">The Capital</a></li>
+            <li><a href="#expansion">Expansion Grants</a></li>
+            <li><a href="#laws">Imperial Law</a></li>
         </ul>
     </nav>
 
     <header class="hero">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <span class="hero-tag">DiplomaticaMC Earth Map Dominion</span>
+            <!-- LARGE FLAG POSITION -->
+            <img src="Untitled design (3).png" class="hero-flag" alt="Imperial Coat of Arms Combination Flag" />
+            <span class="hero-tag">DiplomaticaMC Sovereign Superpower</span>
             <h1>THE COLOMBIAN EMPIRE</h1>
-            <p>Witness the architecture, infrastructure, and absolute power of the New World's premier empire.</p>
+            <p>Dominion over the Caribbean, Central America, and Gran Colombia. Protected by an unshakeable alliance network. Built for the active, the loyal, and the elite.</p>
             <div class="hero-buttons">
-                <a href="#builds" class="btn btn-primary">Tour the Empire</a>
-                <a href="#join" class="btn btn-secondary">Enlist Today</a>
+                <a href="#expansion" class="btn btn-primary">Establish a Town</a>
+                <a href="https://discord.gg/" class="btn btn-secondary" target="_blank">Join Our Discord</a>
             </div>
         </div>
     </header>
 
-    <!-- IN-GAME SHOWCASE GALLERY -->
-    <section id="builds" class="section container">
+    <!-- GEOPOLITICAL DOMAIN & CLAIM MAP -->
+    <section id="domain" class="section container">
         <div class="center-header">
-            <span class="sub-title">Imperial Infrastructure</span>
-            <h2 class="section-title">In-Game Architecture & Styles</h2>
-            <p class="section-desc">We combine raw defense mechanics with majestic design. See how the Colombian Empire shapes its territory block by block.</p>
+            <span class="sub-title">Geopolitical Standing</span>
+            <h2 class="section-title">Absolute Regional Control</h2>
+            <p class="section-desc">Our borders span across the entire Caribbean basin, the depths of Central America, and the historic lands of Gran Colombia. Through crushing military presence and rock-solid diplomatic pacts, no hostile power dares to establish claims near our sovereign soil.</p>
         </div>
 
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <div class="gallery-img-box">
-                    <img src="https://images.unsplash.com/photo-1607988795691-3d0147b43231?auto=format&fit=crop&w=600&q=80" alt="Imperial Palace Layout">
-                    <div class="block-palette-overlay"><span>Palette: Mud Bricks | Quartz | Dark Oak</span></div>
-                </div>
-                <div class="gallery-info">
-                    <h4>The Grand Imperial Palace</h4>
-                    <p>The central command zone in Bogotá. Built with high ceilings and monumental arches, showcasing the absolute wealth and scale of Emperor ueq_'s throne room.</p>
-                </div>
-            </div>
+        <!-- RECENT SERVER MAP UPLOAD -->
+        <div class="map-wrapper">
+            <img src="image_2026-07-03_200618688.png" class="map-img" alt="Official Claim Map: Colombia Heartland & Colony Ecuador" />
+        </div>
+    </section>
 
-            <div class="gallery-item">
-                <div class="gallery-img-box">
-                    <img src="https://images.unsplash.com/photo-1518156677180-95a2893f3e9f?auto=format&fit=crop&w=600&q=80" alt="Colonial Town Architecture">
-                    <div class="block-palette-overlay"><span>Palette: White Concrete | Terracotta | Mangrove</span></div>
+    <!-- THE CAPITAL: PIJAO WITH SIDE GALLERY -->
+    <section id="pijao" class="section bg-alt">
+        <div class="container">
+            <div class="pijao-showcase">
+                <div class="pijao-gallery">
+                    <!-- FIRST DOWNTOWN ARCHITECTURE SHOT -->
+                    <div class="pijao-img-box">
+                        <img src="2026-05-23_17.30.55.webp" alt="Downtown Pijao Architecture Sector A" />
+                        <div class="pijao-img-caption">Downtown Pijao Districts</div>
+                    </div>
+                    <!-- SECOND RECENT DOWNTOWN SHOT -->
+                    <div class="pijao-img-box">
+                        <img src="image_2026-07-03_202955758.png" alt="Downtown Pijao Architecture Sector B" />
+                        <div class="pijao-img-caption">The Imperial Coastal Infrastructure</div>
+                    </div>
                 </div>
-                <div class="gallery-info">
-                    <h4>Colonial Citizen Districts</h4>
-                    <p>Standardized, beautiful housing grids inside our town claims. Designed with vibrant roofs and clean white walls, mixing real-world Colombian style with perfect game alignment.</p>
-                </div>
-            </div>
 
-            <div class="gallery-item">
-                <div class="gallery-img-box">
-                    <img src="https://images.unsplash.com/photo-1590073844006-33379778ae09?auto=format&fit=crop&w=600&q=80" alt="Obsidian Bastion Outpost">
-                    <div class="block-palette-overlay"><span>Palette: Deepslate Bricks | Obsidian | Iron Bars</span></div>
-                </div>
-                <div class="gallery-info">
-                    <h4>Border Fortresses & Citadels</h4>
-                    <p>Pure tactical defense. Built with reinforced deepslate walls and obsidian cores to maximize defense against unexpected faction raids or siege machinery.</p>
+                <div>
+                    <span class="sub-title">Imperial Seat</span>
+                    <h2 class="section-title" style="font-size: 2.5rem; margin-top: 0.5rem;">The Dual-Layer Capital: Pijao</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 2rem; font-size: 1.1rem;">Our capital city, Pijao, represents the ultimate blend of imperial beauty and high-end server commerce. We don't just build; we engineer civilizations.</p>
+                    
+                    <div class="pijao-card">
+                        <h3>🌊 The Coastal Surface</h3>
+                        <p>Above ground, Pijao stretches across a pristine coastline. A beautiful colonial town built to high architectural standards, serving as the proud, scenic face of our global empire.</p>
+                    </div>
+                    <div class="pijao-card">
+                        <h3>💎 The Structured Underground Mall</h3>
+                        <p>Tucked directly beneath the capital lies a highly structured underground shopping network. This massive labyrinth houses player shops, driving the imperial economy and supplying rare gear while feeding merchant taxes directly to the Treasury.</p>
+                    </div>
+
+                    <a href="https://discord.gg/" class="btn btn-primary" target="_blank" style="margin-top: 1rem;">Visit Pijao Market</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- THE GOVERNMENT & MINISTRIES -->
-    <section id="ministries" class="section bg-alt">
+    <!-- EXPANSION GRANTS -->
+    <section id="expansion" class="section container">
+        <div class="center-header">
+            <span class="sub-title">Imperial Expansion</span>
+            <h2 class="section-title">Do You Want A Town?</h2>
+            <p class="section-desc">We don't hoard our wealth—we use it to seize map control. The Crown actively funds trusted governors looking to establish new strongholds under our banner.</p>
+        </div>
+
+        <div class="grant-section">
+            <div class="grant-bg-icon">💰</div>
+            <span class="sub-title" style="color: #fff;">The Mayor Funding Directive</span>
+            <span class="gold-amount">100 - 200 GOLD</span>
+            <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 2.5rem; font-size: 1.1rem;">Every approved citizen who answers the call to build a colony town in our Caribbean or Central American sectors receives up to 200 gold in starting capital directly from the Crown treasury.</p>
+            <a href="https://discord.gg/" class="btn btn-primary" target="_blank">Apply For a Grant</a>
+        </div>
+    </section>
+
+    <!-- THE MINISTRY HIERARCHY -->
+    <section class="section bg-alt">
         <div class="container">
             <div class="center-header">
-                <span class="sub-title">The Crown Hierarchy</span>
-                <h2 class="section-title">The Sovereign Hand</h2>
-                <p class="section-desc">How the Crown coordinates with the executive ministries to handle the tasks of statecraft.</p>
-            </div>
-
-            <div class="throne-showcase">
-                <div class="emperor-box">
-                    <span class="crown-badge">👑 EMPEROR</span>
-                    <h2>ueq_</h2>
-                    <p>The absolute source of all law, foreign alliances, and military mobilization decrees.</p>
-                </div>
+                <span class="sub-title">The Crown Administration</span>
+                <h2 class="section-title">The Sovereign Ministries</h2>
+                <p class="section-desc">The executive powers ensuring total organization of our territory, resources, and development.</p>
             </div>
 
             <div class="grid grid-3">
                 <div class="gov-pill">
                     <h4>🏛️ Ministry of Interior</h4>
-                    <p>Oversees home affairs, city borders, chunk claiming, and coordinates building permits to ensure all imperial land is secure and expanding.</p>
+                    <p>Coordinates town placements, maps out regional borders across Central America, and approves chunk expansions.</p>
                 </div>
                 <div class="gov-pill">
                     <h4>💰 Ministry of Finance</h4>
-                    <p>Manages the imperial gold supply, nation taxes, market shop setups, and fuels the economy to fund major server projects.</p>
+                    <p>Oversees the state treasury, collects shopping plot taxes from the Pijao underground mall, and manages the gold reserve.</p>
                 </div>
                 <div class="gov-pill">
-                    <h4>🌾 Minister of Agriculture</h4>
-                    <p>Feeds the Empire. Controls massive automated or manual crop and livestock farms, ensuring the military and citizens are always supplied.</p>
-                </div>
-                <div class="gov-pill">
-                    <h4>🎨 Minister of Culture</h4>
-                    <p>Preserves the historical identity of Colombia. Manages server roleplay, national holidays, and the aesthetic look of public spaces.</p>
-                </div>
-                <div class="gov-pill">
-                    <h4>⚖️ Minister of Justice and Law</h4>
-                    <p>Enforces order within our borders. Handles trials, punishes rule-breakers, and resolves active player disputes.</p>
-                </div>
-                <div class="gov-pill">
-                    <h4>⚒️ Minister of Labor</h4>
-                    <p>Organizes the working class of the Empire. Coordinates mining operations, mass resource gathering, and heavy structural build projects.</p>
+                    <h4>⚖️ Ministry of Justice</h4>
+                    <p>Enforces internal imperial law, coordinates player security, and settles regional legal disputes.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CALL TO ACTION -->
-    <section id="join" class="section container center" style="text-align: center;">
-        <div class="cta-box">
-            <h2>Serve the Crown</h2>
-            <p>The Empire grows through the passion and grit of its citizens. Secure your citizenship, build historic cities, and claim your legacy under Emperor ueq_.</p>
-            <a href="#" class="btn btn-primary">Connect to Our Discord</a>
+    <!-- MANDATORY ACTIVITY LAWS -->
+    <section id="laws" class="section container">
+        <div class="law-banner">
+            <h3>⚠️ IMPERIAL EDICT: THE ACTIVITY LAW</h3>
+            <p>The Crown holds zero respect for inactivity. There is no chunk upkeep on DiplomaticaMC, meaning every piece of land must be actively utilized. If you become inactive without prior leave... you are gone, and your assets are dissolved back into the Crown.</p>
         </div>
     </section>
 
