@@ -88,37 +88,11 @@
 </head>
 <body>
 
-  <style>
-    /* The Sidebar Toggle Container */
-    .music-sidebar { position: fixed; right: 0; top: 50%; transform: translateY(-50%); z-index: 2000; }
-    
-    /* Hide the checkbox */
-    #music-toggle { display: none; }
-    
-    /* The Button Styles */
-    .music-btn { background: #000; color: #ffc837; border: 2px solid #ffc837; border-right: none; padding: 20px 10px; cursor: pointer; writing-mode: vertical-rl; font-weight: 700; display: block; border-radius: 8px 0 0 8px; }
-    
-    /* The Hidden Iframe Container */
-    .player-container { display: none; }
-    
-    /* When checkbox is checked, show the iframe */
-    #music-toggle:checked ~ .player-container { display: block; }
-    #music-toggle:checked ~ label .music-btn { background: #ffc837; color: #000; }
-</style>
-
-<div class="music-sidebar">
-    <input type="checkbox" id="music-toggle">
-    <label for="music-toggle">
-        <div class="music-btn">TOGGLE ANTHEM</div>
-    </label>
-    
-    <div class="player-container">
-        <!-- The video is 1x1 pixel (hidden) -->
-        <iframe width="1" height="1" 
-                src="https://www.youtube.com/embed/onFfrB50Y8w?autoplay=1" 
-                frameborder="0" allow="autoplay">
-        </iframe>
-    </div>
+  <div class="music-sidebar" style="position: fixed; right: 0; top: 50%; z-index: 2000; background: #000; padding: 10px; border: 2px solid #ffc837; border-radius: 8px 0 0 8px;">
+    <audio controls>
+        <source src="Colombia National Anthem (Instrumental) - National Anthems Channel (128k) (1).mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
 </div>
 </div>
     <nav class="navbar">
