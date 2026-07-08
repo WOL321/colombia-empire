@@ -88,10 +88,31 @@
 </head>
 <body>
 
-  <div class="music-sidebar" style="position: fixed; right: 0; top: 50%; z-index: 2000; background: #000; padding: 10px; border: 2px solid #ffc837; border-radius: 8px 0 0 8px;">
+  <style>
+    /* Sidebar Container */
+    .music-sidebar-left { 
+        position: fixed; 
+        left: 0; 
+        top: 50%; 
+        transform: translateY(-50%); 
+        z-index: 2000; 
+        background: rgba(0, 0, 0, 0.85); 
+        border: 2px solid #ffc837; 
+        border-left: none; 
+        border-radius: 0 8px 8px 0; 
+        padding: 15px;
+    }
+
+    /* Style the audio player to be more compact */
+    .music-sidebar-left audio {
+        width: 200px;
+        filter: invert(1) hue-rotate(180deg) brightness(1.5);
+    }
+</style>
+
+<div class="music-sidebar-left">
     <audio controls>
         <source src="Colombia National Anthem (Instrumental) - National Anthems Channel (128k) (1).mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
     </audio>
 </div>
 </div>
