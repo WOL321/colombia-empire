@@ -2,72 +2,40 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Empire Sports Hub</title>
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Federation | Colombian Empire</title>
     <style>
-        /* All your design lives here */
-        body {
-            background-color: #0a0a0a;
-            color: white;
-            font-family: sans-serif;
-            text-align: center;
-        }
-
-        h1 { color: #c5a059; padding-top: 40px; }
-
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            padding: 40px;
-        }
-
-        .team-card {
-            background-color: #1a1a1a;
-            border: 2px solid #c5a059;
-            padding: 20px;
-            border-radius: 8px;
-            transition: transform 0.3s;
-        }
-
-        .team-card:hover {
-            transform: scale(1.05);
-        }
-
-        .team-card img {
-            max-width: 150px;
-            margin-bottom: 15px;
-        }
+        body { background-color: #05070a; color: #f1f5f9; font-family: 'Plus Jakarta Sans', sans-serif; margin: 0; padding: 40px; }
+        .header { text-align: center; margin-bottom: 50px; position: relative; }
+        .back-btn { position: absolute; left: 0; top: 0; color: #ffc837; text-decoration: none; border: 1px solid #ffc837; padding: 8px 16px; border-radius: 4px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto; }
+        .card { background-color: #111622; border: 1px solid #ffc837; padding: 2rem; text-align: center; border-radius: 4px; }
+        .card img { height: 80px; margin-bottom: 1rem; }
+        .card h3 { color: #fff; margin-bottom: 0.5rem; }
+        .card p { color: #8898aa; font-size: 0.9rem; }
     </style>
 </head>
 <body>
-
-<section id="sports-hub">
-    <h1>Colombian Empire Sports Federation</h1>
-    
-    <div class="team-grid">
-        <!-- Pijao Jaguars -->
-        <div class="team-card">
-            <img src="02ba30729eef459488bbc1bffd4c0425.png" alt="Pijao Jaguars">
-            <h2>Pijao Jaguars</h2>
+    <div class="header">
+        <a href="index.html" class="back-btn">← Back Home</a>
+        <h1>Colombian Empire Sports Federation</h1>
+    </div>
+    <div class="grid">
+        <div class="card">
+            <img src="Untitled design (3).png" alt="Logo">
+            <h3>Pijao Jaguars</h3>
             <p>Professional Hockey Club</p>
         </div>
-
-        <!-- National Hockey Team -->
-        <div class="team-card">
-            <img src="image_2026-07-07_195516790-removebg-preview.png" alt="National Hockey">
-            <h2>Andean Titans</h2>
+        <div class="card">
+            <img src="Untitled design (3).png" alt="Logo">
+            <h3>Andean Titans</h3>
             <p>National Elite Hockey</p>
         </div>
-
-        <!-- Soccer World Cup Team -->
-        <div class="team-card">
-            <img src="Untitled design (4).png" alt="World Cup Soccer">
-            <h2>The Gold Legion</h2>
+        <div class="card">
+            <img src="Untitled design (3).png" alt="Logo">
+            <h3>The Gold Legion</h3>
             <p>National Soccer Team</p>
         </div>
     </div>
-</section>
-
 </body>
 </html>
