@@ -9,12 +9,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-/* ============================================
-   THE COLOMBIAN EMPIRE — Shared Design System
-   ============================================ */
-
-
-
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {
@@ -29,35 +23,24 @@ body {
     linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
   background-size: auto, auto, 44px 44px, 44px 44px;
 }
-
-.center-header { position: relative; }
+.center-header { position: relative; text-align: center; margin-bottom: 4rem; }
 .center-header .section-title { position: relative; padding-bottom: 1.5rem; }
 .center-header .section-title::after {
-  content: '';
-  position: absolute; bottom: 0; left: 50%; transform: translateX(-50%) rotate(45deg);
+  content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%) rotate(45deg);
   width: 8px; height: 8px; background: #ffc837; box-shadow: 0 0 10px rgba(255,200,55,0.6);
 }
 .center-header .section-title::before {
-  content: '';
-  position: absolute; bottom: 3px; left: 50%; transform: translateX(-50%);
+  content: ''; position: absolute; bottom: 3px; left: 50%; transform: translateX(-50%);
   width: 110px; height: 1px;
   background: linear-gradient(90deg, transparent, rgba(255,200,55,0.55) 45%, rgba(255,200,55,0.55) 55%, transparent);
 }
-
 .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
 .section { padding: 6rem 0; animation: fadeInUp 0.8s ease-out forwards; content-visibility: auto; contain-intrinsic-size: 1px 800px; }
 .bg-alt { background-color: #0b0e14; }
-
 @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-8px); } }
-@keyframes glow-pulse {
-  0% { box-shadow: 0 8px 25px rgba(255, 200, 55, 0.4); }
-  50% { box-shadow: 0 12px 40px rgba(255, 200, 55, 0.8); }
-  100% { box-shadow: 0 8px 25px rgba(255, 200, 55, 0.4); }
-}
-
+@keyframes glow-pulse { 0% { box-shadow: 0 8px 25px rgba(255, 200, 55, 0.4); } 50% { box-shadow: 0 12px 40px rgba(255, 200, 55, 0.8); } 100% { box-shadow: 0 8px 25px rgba(255, 200, 55, 0.4); } }
 .navbar { display: flex; justify-content: space-between; align-items: center; padding: 2rem 4rem; position: relative; width: 100%; z-index: 10; }
-.navbar.solid { background-color: #0b0e14; border-bottom: 1px solid rgba(255,255,255,0.05); }
+.navbar.transparent { position: absolute; }
 .nav-brand { display: flex; align-items: center; gap: 1rem; text-decoration: none; }
 .nav-logo-img { height: 40px; width: auto; object-fit: contain; }
 .nav-logo { font-family: 'Cinzel', serif; font-weight: 900; font-size: 1.4rem; letter-spacing: 2px; color: #ffc837; }
@@ -67,7 +50,6 @@ body {
 .nav-links a:hover { color: #ffc837; }
 .nav-links a:hover::after { width: 100%; }
 @media (max-width: 950px) { .navbar { padding: 1.5rem; } .nav-links { display: none; } }
-
 .btn { display: inline-block; padding: 1.2rem 3rem; font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 2px; text-decoration: none; border-radius: 4px; transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1); cursor: pointer; border: none; position: relative; overflow: hidden; }
 .btn:hover { transform: translateY(-3px); }
 .btn-primary { background: linear-gradient(160deg, #ffd868 0%, #ffc837 45%, #e6a916 100%); color: #1a1200; box-shadow: 0 8px 20px rgba(255, 200, 55, 0.3); }
@@ -75,58 +57,34 @@ body {
 .btn-secondary { border: 1px solid rgba(255,255,255,0.15); color: #f1f5f9; margin-left: 1.5rem; transition: all 0.3s ease; }
 .btn-secondary:hover { background: rgba(255,255,255,0.05); border-color: #ffc837; color: #ffc837; }
 @media (max-width: 950px) { .btn-secondary { margin-left: 0; margin-top: 1rem; display: block; } }
-
-.back-link { color: #ffc837; text-decoration: none; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 0.5rem; transition: gap 0.3s ease; }
-.back-link:hover { gap: 0.9rem; }
-
-.center-header { text-align: center; margin-bottom: 4rem; }
 .sub-title { color: #ffc837; text-transform: uppercase; letter-spacing: 4px; font-size: 0.85rem; font-weight: 700; display: block; margin-bottom: 0.5rem; }
 .section-title { font-family: 'Cinzel', serif; font-size: 3rem; font-weight: 900; margin-bottom: 1rem; letter-spacing: 1px; }
 .section-desc { color: #8898aa; max-width: 700px; margin: 0 auto; font-size: 1.1rem; }
-
 .grid { display: grid; gap: 2rem; }
-.grid-2 { grid-template-columns: repeat(2, 1fr); }
 .grid-3 { grid-template-columns: repeat(3, 1fr); }
-@media (max-width: 950px) { .grid-2, .grid-3 { grid-template-columns: 1fr; gap: 2rem; } }
-
+@media (max-width: 950px) { .grid-3 { grid-template-columns: 1fr; gap: 2rem; } }
 .pijao-card { background-color: #111622; border: 1px solid rgba(255,255,255,0.03); padding: 2.5rem; border-radius: 4px; border-left: 4px solid #ffc837; margin-bottom: 1.5rem; transition: all 0.3s ease; }
 .pijao-card:hover { background-color: #141a24; border-left-color: #ffd254; box-shadow: 0 8px 20px rgba(255, 200, 55, 0.1); }
 .pijao-card h3 { font-family: 'Cinzel', serif; font-size: 1.4rem; margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.75rem; }
 .pijao-card p { color: #8898aa; font-size: 0.95rem; }
-
-.gov-pill { background-color: #111622; padding: 2.25rem 2rem; border-radius: 4px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); transition: box-shadow 0.3s ease, transform 0.3s ease; will-change: transform; text-align: center; position: relative; border: 1px solid rgba(255,255,255,0.03); }
+.gov-pill { background-color: #111622; padding: 2.25rem 2rem; border-radius: 4px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); transition: box-shadow 0.3s ease, transform 0.3s ease; text-align: center; position: relative; border: 1px solid rgba(255,255,255,0.03); }
 .gov-pill:hover { box-shadow: 0 10px 30px rgba(0,0,0,0.4), 0 0 24px rgba(255, 200, 55, 0.12); transform: translateY(-4px); }
 .gov-pill .medallion { width: 56px; height: 56px; margin: 0 auto 1rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; background: radial-gradient(circle at 35% 30%, #1c2130, #0b0e14); border: 1px solid rgba(255,200,55,0.35); box-shadow: inset 0 0 12px rgba(255,200,55,0.08), 0 4px 12px rgba(0,0,0,0.3); }
 .gov-pill h4 { font-family: 'Cinzel', serif; font-size: 1.05rem; margin-bottom: 0.5rem; color: #fff; letter-spacing: 1px; text-transform: uppercase; }
 .gov-pill p { color: #8898aa; font-size: 0.88rem; }
-
-.stat-row { display: flex; flex-wrap: wrap; gap: 1rem; margin: 2rem 0; }
-.stat-pill { background-color: #111622; border: 1px solid rgba(255,200,55,0.15); border-radius: 4px; padding: 0.9rem 1.5rem; }
-.stat-pill .stat-label { display: block; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1.5px; color: #8898aa; margin-bottom: 0.25rem; }
-.stat-pill .stat-value { font-family: 'Cinzel', serif; font-weight: 700; color: #ffc837; font-size: 1.1rem; }
-
-.gallery-box { border-radius: 4px; overflow: hidden; border: 1px solid rgba(255, 200, 55, 0.15); box-shadow: 0 10px 25px rgba(0,0,0,0.4); transition: all 0.4s ease; }
-.gallery-box:hover { border-color: rgba(255, 200, 55, 0.4); box-shadow: 0 20px 50px rgba(255, 200, 55, 0.15), 0 0 30px rgba(255, 200, 55, 0.1); }
-.gallery-box img { width: 100%; height: auto; display: block; }
-
 .footer { text-align: center; padding: 4rem 2rem 3rem; background-color: #05070a; position: relative; color: #8898aa; font-size: 0.9rem; }
 .footer::before { content: ''; display: block; width: 60px; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,200,55,0.5), transparent); margin: 0 auto 2rem; }
 .footer .footer-brand { font-family: 'Cinzel', serif; color: #ffc837; letter-spacing: 2px; font-size: 0.95rem; margin-bottom: 0.75rem; text-transform: uppercase; }
 .home-btn { position: fixed; bottom: 20px; right: 20px; background-color: #111622; color: #fff; padding: 10px 15px; text-decoration: none; font-size: 14px; font-weight: bold; border: 1px solid rgba(255, 200, 55, 0.3); border-radius: 4px; z-index: 1000; transition: all 0.3s ease; }
 .home-btn:hover { border-color: #ffc837; color: #ffc837; box-shadow: 0 4px 12px rgba(255, 200, 55, 0.2); }
-
 .music-sidebar-left { position: fixed; left: 0; top: 50%; transform: translateY(-50%); z-index: 2000; }
 .music-btn { width: 40px; height: 100px; background: #ffc837; color: #000; border: 2px solid #ffc837; border-left: none; border-radius: 0 8px 8px 0; font-family: 'Cinzel', serif; font-weight: 900; cursor: pointer; writing-mode: vertical-rl; box-shadow: 0 8px 25px rgba(255, 200, 55, 0.4); transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1); font-size: 0.7rem; text-orientation: mixed; }
 .music-btn:hover { animation: glow-pulse 1.5s infinite; background: #fff; box-shadow: 0 12px 35px rgba(255, 200, 55, 0.6); }
 #hidden-audio { display: none; }
-
-.navbar.transparent { position: absolute; }
-
 .hero { height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; text-align: center; background: radial-gradient(circle at 50% 40%, #131c30 0%, #060810 55%, #030407 100%); overflow: hidden; }
 .hero::before { content: ''; position: absolute; inset: 0; background: repeating-conic-gradient(from 0deg, rgba(255,200,55,0.025) 0deg 1deg, transparent 1deg 12deg); animation: rotate-rays 90s linear infinite; opacity: 0.6; }
 @keyframes rotate-rays { to { transform: rotate(360deg); } }
 .hero-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to bottom, transparent 45%, #05070a); }
-
 .embers { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 1; }
 .embers span { position: absolute; bottom: -20px; width: 3px; height: 3px; border-radius: 50%; background: #ffc837; box-shadow: 0 0 6px 1px rgba(255,200,55,0.8); opacity: 0; animation: ember-rise linear infinite; }
 .embers span:nth-child(1) { left: 8%; width: 2px; height: 2px; animation-duration: 11s; animation-delay: 0.5s; }
@@ -135,10 +93,6 @@ body {
 .embers span:nth-child(4) { left: 39%; animation-duration: 16s; animation-delay: 6s; }
 .embers span:nth-child(5) { left: 52%; width: 2px; height: 2px; animation-duration: 12s; animation-delay: 2s; }
 .embers span:nth-child(6) { left: 64%; animation-duration: 15s; animation-delay: 4.5s; }
-.embers span:nth-child(7) { left: 74%; width: 2px; height: 2px; animation-duration: 10s; animation-delay: 0s; }
-.embers span:nth-child(8) { left: 83%; animation-duration: 13s; animation-delay: 5.5s; }
-.embers span:nth-child(9) { left: 92%; width: 2px; height: 2px; animation-duration: 17s; animation-delay: 2.5s; }
-.embers span:nth-child(10) { left: 46%; animation-duration: 18s; animation-delay: 7.5s; }
 @keyframes ember-rise {
   0% { transform: translateY(0) translateX(0); opacity: 0; }
   8% { opacity: 0.9; }
@@ -146,12 +100,9 @@ body {
   92% { opacity: 0.3; }
   100% { transform: translateY(-92vh) translateX(-8px); opacity: 0; }
 }
-
 .hero-content { position: relative; z-index: 2; max-width: 950px; padding: 0 2rem; display: flex; flex-direction: column; align-items: center; }
-
 .hero::after { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 50% 38%, rgba(255,220,140,0.5), transparent 45%); opacity: 0; animation: impact-flash 0.5s ease-out 0.78s forwards; pointer-events: none; z-index: 1; }
 @keyframes impact-flash { 0% { opacity: 0; } 15% { opacity: 1; } 100% { opacity: 0; } }
-
 .hero-flag-frame { position: relative; width: 150px; height: 150px; margin-bottom: 2rem; display: flex; align-items: center; justify-content: center; opacity: 0; animation: stamp-drop 0.95s cubic-bezier(0.34, 1.15, 0.64, 1) 0.1s forwards; }
 @keyframes stamp-drop {
   0%   { opacity: 0; transform: translateY(-160px) scale(1.5) rotate(-10deg); }
@@ -162,10 +113,8 @@ body {
 }
 .hero-flag-frame::before { content: ''; position: absolute; inset: 0; border-radius: 50%; border: 1px solid rgba(255,200,55,0.4); box-shadow: 0 0 40px rgba(255,200,55,0.25), inset 0 0 30px rgba(255,200,55,0.1); opacity: 0; animation: glow-pulse 3s ease-in-out 0.95s infinite, ring-fade-in 0.3s ease-out 0.95s forwards; }
 @keyframes ring-fade-in { to { opacity: 1; } }
-
 .hero-flag-frame .shockwave { position: absolute; inset: 0; margin: auto; width: 100%; height: 100%; border-radius: 50%; border: 1px solid rgba(255,200,55,0.7); opacity: 0; animation: shockwave 0.7s ease-out 0.62s forwards; pointer-events: none; }
 @keyframes shockwave { 0% { opacity: 0.8; transform: scale(0.5); } 100% { opacity: 0; transform: scale(2.4); } }
-
 .impact-sparks { position: absolute; inset: 0; pointer-events: none; }
 .impact-sparks span { position: absolute; top: 50%; left: 50%; width: 3px; height: 3px; border-radius: 50%; background: #ffc837; box-shadow: 0 0 6px 1px rgba(255,200,55,0.9); opacity: 0; animation: spark-burst 0.65s ease-out 0.62s forwards; }
 .impact-sparks span:nth-child(1) { animation-name: spark-burst-1; }
@@ -180,35 +129,17 @@ body {
 @keyframes spark-burst-4 { 0% { opacity: 1; transform: translate(0,0); } 100% { opacity: 0; transform: translate(75px, 25px); } }
 @keyframes spark-burst-5 { 0% { opacity: 1; transform: translate(0,0); } 100% { opacity: 0; transform: translate(-15px, -75px); } }
 @keyframes spark-burst-6 { 0% { opacity: 1; transform: translate(0,0); } 100% { opacity: 0; transform: translate(20px, 75px); } }
-
-.hero-flag {
-    height: 120px;
-    width: 120px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 2px solid var(--imperial-gold);
-}
-
+.hero-flag { height: 120px; width: 120px; object-fit: cover; border-radius: 50%; border: 2px solid #ffc837; }
 .hero .sub-title { display: block; margin-bottom: 1rem; opacity: 0; animation: hero-reveal 0.7s ease-out 0.95s forwards; }
-
 .hero h1 { font-family: 'Cinzel', serif; font-size: 5rem; font-weight: 900; line-height: 1.1; margin-bottom: 1.5rem; letter-spacing: 6px; text-shadow: 0 0 40px rgba(255,200,55,0.15); clip-path: inset(0 100% 0 0); opacity: 0; animation: title-wipe 1s cubic-bezier(0.65, 0, 0.35, 1) 1.05s forwards; }
-@keyframes title-wipe {
-  0%   { clip-path: inset(0 100% 0 0); opacity: 1; letter-spacing: 6px; }
-  100% { clip-path: inset(0 0% 0 0); opacity: 1; letter-spacing: 2px; }
-}
-
+@keyframes title-wipe { 0% { clip-path: inset(0 100% 0 0); opacity: 1; letter-spacing: 6px; } 100% { clip-path: inset(0 0% 0 0); opacity: 1; letter-spacing: 2px; } }
 .hero p { font-size: 1.4rem; color: #8898aa; margin-bottom: 3.5rem; max-width: 800px; opacity: 0; animation: hero-reveal 0.8s ease-out 1.7s forwards; }
 .hero-buttons { opacity: 0; animation: hero-reveal 0.8s ease-out 1.9s forwards; }
 @keyframes hero-reveal { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
-
 @media (max-width: 950px) { .hero h1 { font-size: 3.2rem; } }
-
-.pijao-showcase { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
 .pijao-img-box { border-radius: 4px; overflow: hidden; border: 1px solid rgba(255, 200, 55, 0.15); box-shadow: 0 10px 25px rgba(0,0,0,0.4); transition: all 0.4s ease; }
 .pijao-img-box:hover { border-color: rgba(255, 200, 55, 0.4); box-shadow: 0 20px 50px rgba(255, 200, 55, 0.15), 0 0 30px rgba(255, 200, 55, 0.1); }
 .pijao-img-box img { width: 100%; height: auto; display: block; }
-@media (max-width: 950px) { .pijao-showcase { grid-template-columns: 1fr; gap: 2rem; } }
-
 .town-card { background-color: #111622; border: 1px solid rgba(255,255,255,0.02); border-radius: 4px; overflow: hidden; display: flex; flex-direction: column; height: 100%; box-shadow: 0 10px 20px rgba(0,0,0,0.3); transition: box-shadow 0.4s ease, border-color 0.4s ease, transform 0.4s ease; }
 .town-card:hover { box-shadow: 0 25px 40px rgba(0,0,0,0.5), 0 0 30px rgba(255, 200, 55, 0.15); border-color: rgba(255,200,55,0.3); transform: translateY(-6px); }
 .town-img-box { width: 100%; aspect-ratio: 16/9; background-color: #161d2b; display: flex; align-items: center; justify-content: center; font-size: 3rem; border-bottom: 2px solid #0b0e14; position: relative; overflow: hidden; }
@@ -218,24 +149,16 @@ body {
 .town-info { padding: 2rem; flex-grow: 1; display: flex; flex-direction: column; }
 .town-info h3 { font-family: 'Cinzel', serif; font-size: 1.5rem; margin-bottom: 0.5rem; color: #fff; }
 .town-info p { color: #8898aa; font-size: 0.95rem; margin-bottom: 1.5rem; flex-grow: 1; }
-
 .law-banner { background: linear-gradient(90deg, #5c0606 0%, #1e0303 100%); border: 1px solid #dc2626; border-radius: 4px; padding: 3.5rem; text-align: center; margin-top: 2rem; transition: all 0.3s ease; }
 .law-banner:hover { box-shadow: 0 10px 30px rgba(220, 38, 38, 0.2); }
 .law-banner h3 { font-family: 'Cinzel', serif; font-size: 2rem; color: #fff; margin-bottom: 0.75rem; }
 .law-banner p { color: #fca5a5; max-width: 750px; margin: 0 auto; font-size: 1.1rem; font-weight: 600; }
-
 .grant-section { text-align: center; background-color: #111622; border: 1px solid rgba(255, 200, 55, 0.1); padding: 4rem; border-radius: 4px; position: relative; overflow: hidden; transition: all 0.3s ease; }
 .grant-section:hover { border-color: rgba(255, 200, 55, 0.3); box-shadow: 0 10px 30px rgba(255, 200, 55, 0.1); }
 .gold-amount { font-family: 'Cinzel', serif; font-size: 4rem; color: #ffc837; font-weight: 900; margin: 1.5rem 0; display: block; text-shadow: 0 0 20px rgba(255,200,55,0.2); }
-
 .map-box { position: relative; border: 3px solid rgba(255,200,55,0.6); border-radius: 8px; overflow: hidden; background: #000; }
 .map-box::after { content: ''; position: absolute; inset: -4px; border-radius: 10px; box-shadow: 0 0 40px 12px rgba(255, 200, 55, 0.7); opacity: 0.3; animation: pulse-border-glow 4s infinite ease-in-out; pointer-events: none; }
-@keyframes pulse-border-glow {
-  0%, 100% { opacity: 0.25; }
-  50% { opacity: 0.9; }
-}
-
-/* ---------- Citizen Roster ---------- */
+@keyframes pulse-border-glow { 0%, 100% { opacity: 0.25; } 50% { opacity: 0.9; } }
 .leader-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; margin-bottom: 3rem; }
 @media (max-width: 950px) { .leader-grid { grid-template-columns: repeat(2, 1fr); } }
 .citizen-card { background-color: #111622; border: 1px solid rgba(255,255,255,0.03); border-radius: 4px; padding: 1.5rem 1.25rem; text-align: center; transition: all 0.3s ease; cursor: pointer; }
@@ -249,9 +172,6 @@ body {
 @media (max-width: 950px) { .citizen-grid { grid-template-columns: repeat(3, 1fr); } }
 @media (max-width: 600px) { .citizen-grid { grid-template-columns: repeat(2, 1fr); } }
 .roster-subhead { font-family: 'Cinzel', serif; font-size: 0.9rem; letter-spacing: 2px; text-transform: uppercase; color: #8898aa; margin-bottom: 1.25rem; text-align: center; }
-
-
-/* ---------- Citizen Profile Modal (wiki page) ---------- */
 .profile-overlay { position: fixed; inset: 0; background: rgba(5,7,10,0.88); z-index: 5000; display: none; align-items: center; justify-content: center; padding: 2rem; }
 .profile-overlay.open { display: flex; }
 .profile-modal { background: linear-gradient(180deg, #111622 0%, #0b0e14 100%); border: 1px solid rgba(255,200,55,0.25); border-radius: 6px; max-width: 520px; width: 100%; max-height: 85vh; overflow-y: auto; box-shadow: 0 30px 80px rgba(0,0,0,0.6); position: relative; }
@@ -268,8 +188,6 @@ body {
 .profile-facts .fact .fk { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 1px; color: #8898aa; margin-bottom: 0.3rem; }
 .profile-facts .fact .fv { font-family: 'Cinzel', serif; font-weight: 700; font-size: 0.9rem; color: #f1f5f9; }
 .profile-unverified { margin-top: 1.5rem; text-align: center; font-size: 0.75rem; color: #8898aa; font-style: italic; }
-
-/* ---------- DMC Wiki Widget ---------- */
 .wiki-widget { background-color: #111622; border: 1px solid rgba(255, 200, 55, 0.15); border-radius: 4px; max-width: 720px; margin: 0 auto; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.4); }
 .wiki-widget-head { display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 1.75rem; border-bottom: 1px solid rgba(255,200,55,0.12); }
 .wiki-widget-head .wtag { font-family: 'Cinzel', serif; font-size: 0.75rem; letter-spacing: 2px; color: #ffc837; text-transform: uppercase; }
@@ -281,15 +199,12 @@ body {
 .wiki-widget-text a { color: #ffc837; text-decoration: none; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
 .wiki-widget-text a:hover { text-decoration: underline; }
 @media (max-width: 600px) { .wiki-widget-body { flex-direction: column; } .wiki-widget-body img { width: 100%; height: 180px; } }
-
 </style>
 </head>
 <body>
 
 <div class="music-sidebar-left">
-  <button class="music-btn" onclick="document.getElementById('hidden-audio').paused ? document.getElementById('hidden-audio').play() : document.getElementById('hidden-audio').pause()">
-    ANTHEM
-  </button>
+  <button class="music-btn" onclick="document.getElementById('hidden-audio').paused ? document.getElementById('hidden-audio').play() : document.getElementById('hidden-audio').pause()">ANTHEM</button>
   <audio id="hidden-audio" src="Colombia National Anthem (Instrumental) - National Anthems Channel (128k) (1).mp3" loop></audio>
 </div>
 
@@ -312,15 +227,11 @@ body {
 
 <header class="hero">
   <div class="hero-overlay"></div>
-  <div class="embers">
-    <span></span><span></span><span></span><span></span><span></span><span></span>
-  </div>
+  <div class="embers"><span></span><span></span><span></span><span></span><span></span><span></span></div>
   <div class="hero-content">
     <div class="hero-flag-frame">
       <div class="shockwave"></div>
-      <div class="impact-sparks">
-        <span></span><span></span><span></span><span></span><span></span><span></span>
-      </div>
+      <div class="impact-sparks"><span></span><span></span><span></span><span></span><span></span><span></span></div>
       <img src="Untitled design (3).png" class="hero-flag" alt="Imperial Flag" />
     </div>
     <span class="sub-title">Est. 2026 · DiplomaticaMC</span>
@@ -347,20 +258,12 @@ body {
       <span class="sub-title">The Capital</span>
       <h2 class="section-title">The Heart of the Crown</h2>
     </div>
-    <div class="pijao-img-box">
-      <img src="2026-05-23_17.30.55.webp" alt="Secondary Pijao View" loading="lazy" decoding="async">
-    </div>
+    <div class="pijao-img-box"><img src="2026-05-23_17.30.55.webp" alt="Secondary Pijao View" loading="lazy" decoding="async"></div>
     <div style="margin-top: 2rem;">
       <h2 class="section-title" style="font-size: 2.5rem; margin-bottom: 1.5rem;">Pijao</h2>
       <p style="color: #8898aa; margin-bottom: 2rem; font-size: 1.1rem;">Our primary seat of power represents the ultimate blend of imperial beauty and high-end server commerce. We don't just build; we engineer civilizations.</p>
-      <div class="pijao-card">
-        <h3>🌊 The Coastal Surface</h3>
-        <p>Above ground, Pijao stretches across a pristine coastline. A beautiful colonial town built to high architectural standards, serving as the proud, scenic face of our global empire.</p>
-      </div>
-      <div class="pijao-card">
-        <h3>💎 The Structured Underground Mall</h3>
-        <p>Tucked directly beneath the capital lies a highly structured underground shopping network housing player shops to supply rare gear and generate treasury funding.</p>
-      </div>
+      <div class="pijao-card"><h3>🌊 The Coastal Surface</h3><p>Above ground, Pijao stretches across a pristine coastline. A beautiful colonial town built to high architectural standards, serving as the proud, scenic face of our global empire.</p></div>
+      <div class="pijao-card"><h3>💎 The Structured Underground Mall</h3><p>Tucked directly beneath the capital lies a highly structured underground shopping network housing player shops to supply rare gear and generate treasury funding.</p></div>
     </div>
   </div>
 </section>
@@ -374,27 +277,15 @@ body {
   <div class="grid grid-3">
     <div class="town-card">
       <div class="town-img-box"><img src="2026-07-03_20.59.29.webp" alt="Tegucigalpa" style="width:100%;height:100%;object-fit:cover;" loading="lazy" decoding="async"></div>
-      <div class="town-info">
-        <h3>Tegucigalpa</h3>
-        <p>Our key stronghold in the Central American sector, reinforcing continental stability.</p>
-        <a href="tegucigalpa.html" class="btn btn-primary" style="padding: 0.8rem; text-align: center; font-size: 0.75rem; margin-top: auto;">Explore</a>
-      </div>
+      <div class="town-info"><h3>Tegucigalpa</h3><p>Our key stronghold in the Central American sector, reinforcing continental stability.</p><a href="tegucigalpa.html" class="btn btn-primary" style="padding: 0.8rem; text-align: center; font-size: 0.75rem; margin-top: auto;">Explore</a></div>
     </div>
     <div class="town-card">
       <div class="town-img-box"><img src="2026-07-03_21.15.17.webp" alt="Salento" style="width:100%;height:100%;object-fit:cover;" loading="lazy" decoding="async"></div>
-      <div class="town-info">
-        <h3>Salento</h3>
-        <p>A beautifully constructed interior township showcasing high-tier architectural prowess.</p>
-        <a href="salento.html" class="btn btn-primary" style="padding: 0.8rem; text-align: center; font-size: 0.75rem; margin-top: auto;">Explore</a>
-      </div>
+      <div class="town-info"><h3>Salento</h3><p>A beautifully constructed interior township showcasing high-tier architectural prowess.</p><a href="salento.html" class="btn btn-primary" style="padding: 0.8rem; text-align: center; font-size: 0.75rem; margin-top: auto;">Explore</a></div>
     </div>
     <div class="town-card">
       <div class="town-img-box"><img src="2026-07-03_21.59.12.webp" alt="Barbados" style="width:100%;height:100%;object-fit:cover;" loading="lazy" decoding="async"></div>
-      <div class="town-info">
-        <h3>Barbados</h3>
-        <p>Our premier island outpost, maintaining absolute maritime watch over the Caribbean.</p>
-        <a href="barbados.html" class="btn btn-primary" style="padding: 0.8rem; text-align: center; font-size: 0.75rem; margin-top: auto;">Explore</a>
-      </div>
+      <div class="town-info"><h3>Barbados</h3><p>Our premier island outpost, maintaining absolute maritime watch over the Caribbean.</p><a href="barbados.html" class="btn btn-primary" style="padding: 0.8rem; text-align: center; font-size: 0.75rem; margin-top: auto;">Explore</a></div>
     </div>
   </div>
 </section>
@@ -415,13 +306,8 @@ body {
     <p class="section-desc">Live, pulled directly from the official DiplomaticaMC Wiki.</p>
   </div>
   <div class="wiki-widget">
-    <div class="wiki-widget-head">
-      <span class="wtag">Wiki Entry</span>
-      <span class="wlogo">wiki.diplomaticamc.com</span>
-    </div>
-    <div class="wiki-widget-body" id="wikiWidgetBody">
-      <p style="color:#8898aa;">Loading…</p>
-    </div>
+    <div class="wiki-widget-head"><span class="wtag">Wiki Entry</span><span class="wlogo">wiki.diplomaticamc.com</span></div>
+    <div class="wiki-widget-body" id="wikiWidgetBody"><p style="color:#8898aa;">Loading…</p></div>
   </div>
 </section>
 
@@ -448,10 +334,8 @@ body {
     <h2 class="section-title">Citizen Roster</h2>
     <p class="section-desc">The leadership and players who call the Empire home.</p>
   </div>
-
   <div class="roster-subhead">Imperial Leadership</div>
   <div class="leader-grid" id="leaderGrid"></div>
-
   <div class="roster-subhead">Citizens</div>
   <div class="citizen-grid" id="citizenGrid"></div>
 </section>
@@ -510,12 +394,6 @@ document.querySelectorAll('.section, .town-card, .gov-pill').forEach(el => {
   observer.observe(el);
 });
 
-/* ---------- Citizen Roster ----------
-   Leaders show up bigger, at the top, in their own row.
-   Everyone else goes in the regular citizens list below.
-   Just add/remove lines — the player head image loads automatically from their
-   exact Minecraft username, no upload needed.
-*/
 const leaders = [
   { username: "ueq_",       role: "Emperor of Colombia", town: "Pijao", joined: "Est. 2026", bio: "Founder and Emperor of the Colombian Empire." },
   { username: "OliveTree315", role: "Prime Minister of Colombia", town: "Medellin_Antioquia", joined: "2026", bio: "" },
@@ -564,10 +442,9 @@ const citizens = [
   { username: "wewakm2",           role: "Citizen" },
   { username: "AnythingIsFinee",   role: "Citizen" },
   { username: "ThyCoolio",         role: "Citizen" },
-  { username: "sarcasticbox",         role: "Citizen" },
-  { username: "jakke_mugen",         role: "Citizen" },
-  { username: "alexiszadas34",         role: "Citizen" },
-];
+  { username: "sarcasticbox",      role: "Citizen" },
+  { username: "jakke_mugen",       role: "Citizen" },
+  { username: "alexiszadas34",     role: "Citizen" },
 ];
 
 function renderPlayerCards(list, containerId, isLeader) {
@@ -603,27 +480,15 @@ document.addEventListener('keydown', (e) => { if (e.key === 'Escape') profileOve
 renderPlayerCards(leaders, 'leaderGrid', true);
 renderPlayerCards(citizens, 'citizenGrid', false);
 
-/* ---------- DMC Wiki Widget ----------
-   Pulls a live preview (image + intro text) straight from a page on the official
-   DiplomaticaMC Wiki using MediaWiki's public API. Change WIKI_PAGE_TITLE to
-   whatever your nation's wiki page is actually called (spaces are fine).
-*/
-const WIKI_PAGE_TITLE = "Colombia"; // <-- change to your actual wiki page title
+const WIKI_PAGE_TITLE = "Colombia";
 const wikiWidgetBody = document.getElementById('wikiWidgetBody');
 
 async function loadWikiWidget() {
   try {
     const params = new URLSearchParams({
-      action: "query",
-      format: "json",
-      origin: "*",
-      prop: "extracts|pageimages",
-      exintro: "1",
-      explaintext: "1",
-      exchars: "400",
-      piprop: "thumbnail",
-      pithumbsize: "300",
-      titles: WIKI_PAGE_TITLE
+      action: "query", format: "json", origin: "*",
+      prop: "extracts|pageimages", exintro: "1", explaintext: "1", exchars: "400",
+      piprop: "thumbnail", pithumbsize: "300", titles: WIKI_PAGE_TITLE
     });
     const res = await fetch(`https://wiki.diplomaticamc.com/api.php?${params}`);
     const data = await res.json();
@@ -653,7 +518,6 @@ async function loadWikiWidget() {
 }
 const wikiSection = document.getElementById('wiki');
 if (wikiSection && 'IntersectionObserver' in window) {
-  // Don't fire the wiki API call until the section is actually about to be seen.
   let wikiLoaded = false;
   const wikiObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
